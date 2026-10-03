@@ -23,14 +23,16 @@
 @media (prefers-color-scheme:dark){:root{--paper:#071122;--surface:#0d1a33;--ink:#e6ecf8;--muted:#a3b0cc;--line:#1f2e4d;--blue:#5bb2f5;--violet:#ae91f7}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+#nn{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main{position:relative;z-index:1}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
-.hero{padding:clamp(40px,7vw,80px) 0 clamp(32px,5vw,56px);background:radial-gradient(900px 400px at 15% 0%,color-mix(in srgb,var(--blue) 14%,transparent),transparent 70%)}
+.hero{padding:clamp(48px,8vw,96px) 0 clamp(36px,5vw,60px)}
 .hero .wrap{display:flex;gap:clamp(20px,4vw,40px);align-items:center;flex-wrap:wrap}
-.hero .pic{width:clamp(110px,18vw,150px);height:clamp(110px,18vw,150px);border-radius:50%;border:3px solid var(--line);flex:none}
+.hero .pic{width:clamp(150px,24vw,210px);height:clamp(150px,24vw,210px);border-radius:50%;border:3px solid var(--line);flex:none}
 .hero .who{min-width:0;flex:1 1 320px}
 .eyebrow{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 12px}
 h1{font:800 clamp(34px,6vw,60px)/1 var(--display);font-stretch:118%;letter-spacing:-.03em;margin:0 0 12px;overflow-wrap:anywhere}
@@ -45,7 +47,7 @@ h1{font:800 clamp(34px,6vw,60px)/1 var(--display);font-stretch:118%;letter-spaci
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips a,.chips span{display:inline-flex;align-items:center;gap:6px;font:500 13px/1.35 var(--mono);padding:8px 12px;border-radius:18px;border:1px solid var(--line);background:var(--surface);text-decoration:none}
 .chips a:hover{border-color:var(--blue)}
-section{padding:clamp(44px,7vw,80px) 0;border-top:1px solid var(--line)}
+section{padding:clamp(44px,7vw,80px) 0;border-top:1px solid var(--line);background:color-mix(in srgb,var(--paper) 55%,transparent)}
 h2{font:800 clamp(28px,4.4vw,44px)/1.05 var(--display);font-stretch:112%;letter-spacing:-.025em;margin:0 0 10px}
 .intro{color:var(--muted);max-width:40em;margin:0 0 32px}
 .intro strong{color:var(--ink);font-weight:600}
@@ -77,7 +79,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
 .team .sup{margin-left:auto} .team .sup b{color:var(--ink);font-weight:500}
 @media (max-width:560px){.team .sup{margin-left:0;flex-basis:100%}}
 .status{display:inline-flex;align-items:center;gap:6px;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
-.status i{width:7px;height:7px;border-radius:50%;background:var(--blue)} .status.wip i{background:#e0a526} .status.done i{background:#1fae6b}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--blue)} .status.wip i{background:#e0a526} .status.done i{background:#1fae6b} .status.ready i{background:var(--violet)}
 .grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:16px}
 .grid3 .card{display:flex;flex-direction:column} .grid3 .tags{margin-top:auto}
 .org-logo{display:inline-flex;background:#fff;padding:10px 16px;border-radius:12px;border:1px solid var(--line);margin:0 0 18px}
@@ -85,15 +87,16 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
 </style>
 </head>
 <body>
+<canvas id="nn" aria-hidden="true"></canvas>
 <main>
   <div class="hero">
     <div class="wrap">
-      <img class="pic" src="https://github.com/Muhammad-Azeem-Bhatti.png?size=300" alt="" width="150" height="150">
+      <img class="pic" src="https://github.com/Muhammad-Azeem-Bhatti.png?size=460" alt="" width="210" height="210">
       <div class="who">
         <h1>Muhammad Azeem Bhatti</h1>
         <p class="about">Builds medical-imaging and machine-learning systems, from graph-attention segmentation models to explainable feature selection. Intern at Golden Gate Innovations.</p>
         <nav class="connect" aria-label="Contact links"><a href="https://github.com/Muhammad-Azeem-Bhatti" target=_blank rel=noopener><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3"/></svg>GitHub</a><a href="https://www.linkedin.com/in/muhammad-azeem-bhatti/" target=_blank rel=noopener><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a><a href="https://orcid.org/0009-0001-9744-4235" target=_blank rel=noopener><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#a6ce39"/><path fill="#fff" d="M7.1 6.3a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9zM6.4 9.4h1.4v8.3H6.4zM10 9.4h3.1c2.9 0 4.4 2.1 4.4 4.15 0 2.25-1.75 4.15-4.4 4.15H10zm1.4 1.27v5.76h1.65c2.35 0 2.95-1.65 2.95-2.88 0-2-1.3-2.88-3-2.88z"/></svg>ORCID 0009-0001-9744-4235</a><a href="mailto:muhammadazeembhatti.ai@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>muhammadazeembhatti.ai@gmail.com</a><a href="tel:+923337554665"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+92 333 7554665</a></nav>
-        <p class="stats">3 projects · 2 papers under submission · 1 internship · part of <a href="https://ai-collective-lab.github.io/">AI Collective</a></p>
+        <p class="stats">3 projects · 2 research papers · 1 internship · part of <a href="https://ai-collective-lab.github.io/">AI Collective</a></p>
       </div>
     </div>
   </div>
@@ -152,11 +155,11 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
   <section id="research">
     <div class="wrap">
       <p class="eyebrow">Research</p>
-      <h2>Papers under submission</h2>
-      <p class="intro">All AI Collective research is carried out under the supervision of <strong>Dr. Umme Zahoora</strong>. Results are from the submitted versions and may change in review.</p>
+      <h2>Research papers</h2>
+      <p class="intro">All AI Collective research is carried out under the supervision of <strong>Dr. Umme Zahoora</strong>. Results are from the manuscripts and may change in review.</p>
       <div class="cards">
       <article class="card">
-        <p class="status"><i></i>Submitted · Information Fusion (Elsevier) · Aug 2026</p>
+        <p class="status submitted"><i></i>Submitted · Information Fusion (Elsevier) · Aug 2026</p>
         <span class="mine">First author</span>
         <p class="kicker">Explainable AI · Medical imaging</p>
         <h3>Multi-Objective Selection of Hybrid Deep–Radiomic Features for Brain Tumor MRI Classification with Transparent Fuzzy Rule-Based Inference</h3>
@@ -167,7 +170,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
         <div class="team">Members <a href="https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/"><img src="https://github.com/Muhammad-Azeem-Bhatti.png?size=52" alt="" width="26" height="26" loading="lazy">@Muhammad-Azeem-Bhatti</a><span class="sup">Supervised by <b>Dr. Umme Zahoora</b></span></div>
       </article>
       <article class="card">
-        <p class="status"><i></i>Submitted · Frontiers</p>
+        <p class="status ready"><i></i>Ready to submit · Frontiers</p>
         <span class="mine">Co-author (author 3 of 6)</span>
         <p class="kicker">Federated learning · Medical imaging</p>
         <h3>A Privacy-Preserving Federated Learning Framework with Variance-Based Aggregation and Customized U-Net for Brain Tumor Segmentation</h3>
@@ -188,7 +191,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
       <p class="intro">Projects built as an intern at <strong>Golden Gate Innovations</strong>. The code and data belong to the company, so only a summary of each is shown.</p>
       <div class="grid3">
         <article class="card">
-          <p class="status wip"><i></i>In progress</p>
+          <p class="status done"><i></i>Delivered</p>
           <p class="kicker">Computer vision · Utilities</p>
           <h3>K-Electric meter reading</h3>
           <p>Reads electricity meters from field photos: finds the display, straightens it and reads the digits several times. Readings that all agree are accepted automatically; the rest go to a person to check.</p>
@@ -212,5 +215,59 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
     </div>
   </section>
 </main>
+<script>
+// Background: a layered neural network; signals travel layer by layer, left to right.
+(function(){
+  const cv=document.getElementById('nn'), ctx=cv.getContext('2d');
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  let W,H,layers=[],edges=[],pulses=[],last=0,next=0;
+  function build(){
+    const dpr=Math.min(devicePixelRatio||1,2); W=innerWidth; H=innerHeight;
+    cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    const sizes=W<700?[4,6,6,3]:[5,8,10,10,8,4], L=sizes.length, padX=W*.06, padY=H*.12;
+    layers=sizes.map((n,i)=>Array.from({length:n},(_,k)=>({
+      x:padX+(W-2*padX)*i/(L-1)+(Math.random()-.5)*W*.03,
+      y:padY+(H-2*padY)*(k+.5)/n+(Math.random()-.5)*H*.04})));
+    edges=[];
+    for(let i=0;i<L-1;i++) layers[i].forEach((a,ai)=>layers[i+1].forEach((b,bi)=>{
+      if(Math.random()<.45) edges.push({a,b,l:i,w:.35+Math.random()*.65});
+    }));
+    pulses=[]; draw(0);
+  }
+  function fire(){                       // a signal enters at the input layer and is routed onwards
+    const start=edges.filter(e=>e.l===0); if(!start.length) return;
+    pulses.push({e:start[Math.random()*start.length|0],t:0});
+  }
+  function draw(dt){
+    const blue=css('--blue'), violet=css('--violet');
+    ctx.clearRect(0,0,W,H);
+    ctx.lineWidth=1;
+    edges.forEach(e=>{ctx.strokeStyle=blue; ctx.globalAlpha=.13*e.w; ctx.beginPath(); ctx.moveTo(e.a.x,e.a.y); ctx.lineTo(e.b.x,e.b.y); ctx.stroke();});
+    layers.forEach((ly,i)=>ly.forEach(n=>{ctx.globalAlpha=.38; ctx.fillStyle=i%2?violet:blue; ctx.beginPath(); ctx.arc(n.x,n.y,2.6,0,7); ctx.fill();}));
+    const born=[];
+    pulses.forEach(p=>{
+      p.t+=dt*.55;
+      const e=p.e, x=e.a.x+(e.b.x-e.a.x)*Math.min(p.t,1), y=e.a.y+(e.b.y-e.a.y)*Math.min(p.t,1);
+      ctx.strokeStyle=violet; ctx.globalAlpha=.28*(1-Math.abs(p.t-.5)); ctx.lineWidth=1.4;
+      ctx.beginPath(); ctx.moveTo(e.a.x,e.a.y); ctx.lineTo(x,y); ctx.stroke();
+      ctx.globalAlpha=.55; ctx.fillStyle=violet; ctx.beginPath(); ctx.arc(x,y,2.4,0,7); ctx.fill();
+      if(p.t>=1 && !p.done){ p.done=true;
+        const outs=edges.filter(o=>o.a===e.b); if(outs.length) born.push({e:outs[Math.random()*outs.length|0],t:0}); }
+    });
+    pulses=pulses.filter(p=>!p.done).concat(born);
+    ctx.globalAlpha=1;
+  }
+  function loop(now){
+    const dt=Math.min((now-last)/1000,.05); last=now;
+    if(!document.hidden){ next-=dt; if(next<=0 && pulses.length<18){ fire(); next=.35+Math.random()*.5; } draw(dt); }
+    requestAnimationFrame(loop);
+  }
+  let rt; addEventListener('resize',()=>{clearTimeout(rt); rt=setTimeout(build,150);});
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>draw(0));
+  build();
+  if(!still) requestAnimationFrame(t=>{last=t; loop(t);});
+})();
+</script>
 </body>
 </html>

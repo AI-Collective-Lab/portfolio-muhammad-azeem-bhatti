@@ -21,13 +21,13 @@ All AI Collective research is carried out under the supervision of **Dr. Umme Za
 | Paper | Status | Authors |
 |---|---|---|
 | **Multi-Objective Selection of Hybrid Deep–Radiomic Features for Brain Tumor MRI Classification with Transparent Fuzzy Rule-Based Inference** | 📨 Submitted · Information Fusion (Elsevier) · Aug 2026 | **[Muhammad Azeem Bhatti](https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/)**, Khadija Tul Kubra, Umme Zahoora, Tanja Pavleska, Asifullah Khan |
-| **A Privacy-Preserving Federated Learning Framework with Variance-Based Aggregation and Customized U-Net for Brain Tumor Segmentation** | 📨 Submitted · Frontiers | **[Sumer Iqbal](https://ai-collective-lab.github.io/portfolio-sumer238/)**, Khadija Tul Kubra, **[Muhammad Azeem Bhatti](https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/)**, Farquleet Farhat Gondal, Saddam Hussain Khan, Umme Zahoora |
+| **A Privacy-Preserving Federated Learning Framework with Variance-Based Aggregation and Customized U-Net for Brain Tumor Segmentation** | 📝 Ready to submit · Frontiers | **[Sumer Iqbal](https://ai-collective-lab.github.io/portfolio-sumer238/)**, Khadija Tul Kubra, **[Muhammad Azeem Bhatti](https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/)**, Farquleet Farhat Gondal, Saddam Hussain Khan, Umme Zahoora |
 
 ## 💼 Industry work: internship at Golden Gate Innovations
 
 | Project | What it does | Status |
 |---|---|---|
-| **K-Electric meter reading** | Reads electricity meters from field photos: finds the display, straightens it and reads the digits several times. Readings that all agree are accepted automatically; the rest go to a person to check. | 🟡 In progress |
+| **K-Electric meter reading** | Reads electricity meters from field photos: finds the display, straightens it and reads the digits several times. Readings that all agree are accepted automatically; the rest go to a person to check. | 🟢 Delivered |
 | **Urdu-English meeting transcription** | Transcribes meetings where people switch between Urdu and English mid-sentence, then writes a summary with action items. The audio never leaves the company's own servers. | 🟢 Delivered |
 | **OSINT news monitor** | Collects public news, Reddit threads and government press releases. An LLM tags each item by topic and stance, and everything lands in a dashboard for analysts to review. | 🟢 Delivered |
 
