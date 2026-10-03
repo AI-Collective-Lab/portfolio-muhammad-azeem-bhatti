@@ -48,6 +48,11 @@ h1{font:800 clamp(34px,6vw,60px)/1 var(--display);font-stretch:118%;letter-spaci
 .src-btn:hover{opacity:.88}
 .frame.shot{margin-top:46px}
 @media (max-width:820px){.frame.shot{margin-top:0}}
+.edu{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.edu .card{padding:20px 22px}
+.edu h3{font-size:clamp(18px,2.2vw,21px);margin:0 0 6px}
+.edu .school{color:var(--blue);font-weight:500;margin:0 0 6px}
+.edu .when{font:400 13px/1.5 var(--mono);color:var(--muted);margin:0}
 .card.clickable{cursor:pointer;transition:border-color .2s ease,transform .2s ease}
 .card.clickable:hover{border-color:var(--blue);transform:translateY(-2px)}
 h3 a.title{text-decoration:none} h3 a.title span{color:var(--blue);font-size:.8em} .card.clickable:hover h3 a.title{color:var(--blue)}
@@ -126,6 +131,24 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
     </div>
   </div>
 
+
+  <section id="education">
+    <div class="wrap">
+      <p class="eyebrow">Education</p>
+      <div class="edu">
+        <article class="card">
+          <h3>MS, Artificial Intelligence</h3>
+          <p class="school">Air University, E-9 Campus, Islamabad</p>
+          <p class="when">Sep 2025 – Present · CGPA 3.97 / 4.0</p>
+        </article>
+        <article class="card">
+          <h3>BS, Electrical Engineering (Electronics)</h3>
+          <p class="school">Air University, E-9 Campus, Islamabad</p>
+          <p class="when">Sep 2015 – Jun 2019</p>
+        </article>
+      </div>
+    </div>
+  </section>
   <section id="projects">
     <div class="wrap">
       <p class="eyebrow">Projects</p>

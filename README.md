@@ -6,6 +6,13 @@
 
 **Connect:** [GitHub](https://github.com/Muhammad-Azeem-Bhatti) · [LinkedIn](https://www.linkedin.com/in/muhammad-azeem-bhatti/) · [ORCID 0009-0001-9744-4235](https://orcid.org/0009-0001-9744-4235) · [muhammadazeembhatti.ai@gmail.com](mailto:muhammadazeembhatti.ai@gmail.com) · [+92 333 7554665](tel:+923337554665)
 
+## 🎓 Education
+
+| Degree | Institution | Dates |
+|---|---|---|
+| **MS, Artificial Intelligence** | Air University, E-9 Campus, Islamabad | Sep 2025 – Present · CGPA 3.97 / 4.0 |
+| **BS, Electrical Engineering (Electronics)** | Air University, E-9 Campus, Islamabad | Sep 2015 – Jun 2019 |
+
 ## 🧠 Projects
 
 | Project | Role | What it is | Links |
