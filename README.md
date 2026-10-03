@@ -21,7 +21,7 @@ All research is carried out under the supervision of **Dr. Umme Zahoora**.
 | Paper | Status | Authors |
 |---|---|---|
 | **Multi-Objective Selection of Hybrid Deep–Radiomic Features for Brain Tumor MRI Classification with Transparent Fuzzy Rule-Based Inference** | 📨 Submitted · Information Fusion (Elsevier) · Aug 2026 | **[Muhammad Azeem Bhatti](https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/)**, Khadija Tul Kubra, Umme Zahoora, Tanja Pavleska, Asifullah Khan |
-| **A Privacy-Preserving Federated Learning Framework with Variance-Based Aggregation and Customized U-Net for Brain Tumor Segmentation** | 📝 Ready to submit · Frontiers | **[Sumer Iqbal](https://ai-collective-lab.github.io/portfolio-sumer238/)**, Khadija Tul Kubra, **[Muhammad Azeem Bhatti](https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/)**, Farquleet Farhat Gondal, Saddam Hussain Khan, Umme Zahoora |
+| **A Privacy-Preserving Federated Learning Framework with Variance-Based Aggregation and Customized U-Net for Brain Tumor Segmentation** | 📝 Ready to submit · Frontiers in Oncology | **[Sumer Iqbal](https://ai-collective-lab.github.io/portfolio-sumer238/)**, Khadija Tul Kubra, **[Muhammad Azeem Bhatti](https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/)**, Farquleet Farhat Gondal, Saddam Hussain Khan, Umme Zahoora |
 
 ## 💼 Industry work: internship at Golden Gate Innovations
 
