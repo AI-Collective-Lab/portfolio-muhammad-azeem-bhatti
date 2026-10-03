@@ -99,6 +99,18 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
 @media (max-width:560px){.team .sup{margin-left:0;flex-basis:100%}}
 .status{display:inline-flex;align-items:center;gap:6px;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
 .status i{width:7px;height:7px;border-radius:50%;background:var(--blue)} .status.wip i{background:#e0a526} .status.done i{background:#1fae6b} .status.ready i{background:var(--violet)}
+.slider{max-width:100%}
+.viewport{overflow:hidden;border-radius:18px}
+.track{display:flex;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.slide{flex:0 0 100%;margin:0;min-width:0}
+.slide .metrics{max-width:520px}
+.slider-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px}
+.arrow{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 18px/1 var(--body);cursor:pointer}
+.arrow:hover{border-color:var(--blue)}
+.dots{display:flex;gap:8px}
+.dot{width:9px;height:9px;padding:0;border-radius:99px;border:0;background:var(--line);cursor:pointer;transition:width .3s ease,background .3s ease}
+.dot[aria-current="true"]{width:26px;background:var(--blue)}
+@media (prefers-reduced-motion:reduce){.track{transition:none}}
 .grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:16px}
 .grid3 .card{display:flex;flex-direction:column} .grid3 .metrics dd small{display:block;margin:3px 0 0} .grid3 .tags{margin-top:auto}
 .org-logo{display:inline-flex;background:#fff;padding:10px 16px;border-radius:12px;border:1px solid var(--line);margin:0 0 18px}
@@ -108,7 +120,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
  @page{margin:14mm}
  body{font-size:13px;background:#fff}
  #nn,.connect a.cv,.frame,.team{display:none}
- .card.split,.cards,.grid3{display:block} .eyebrow,h2,.intro,.org-logo{break-after:avoid;page-break-after:avoid} .card{margin:0 0 12px} .card.clickable:hover{transform:none}
+ .card.split,.cards,.grid3,.track{display:block} .track{transform:none!important} .slide{margin:0 0 12px} .slider-nav{display:none} .viewport{overflow:visible} .eyebrow,h2,.intro,.org-logo{break-after:avoid;page-break-after:avoid} .card{margin:0 0 12px} .card.clickable:hover{transform:none}
  section{background:none;padding:22px 0;border-top:1px solid var(--line)}
  .hero{padding:0 0 18px}
  .card{break-inside:avoid;padding:16px;border-radius:10px}
@@ -185,31 +197,39 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
       <p class="eyebrow">Industry work · Jul 2026 – Present</p>
       <div class="org-logo"><img src="https://ai-collective-lab.github.io/assets/ggi-logo.png" width="144" height="40" alt="Golden Gate Innovations"></div>
       <p class="intro">Projects built as an intern at <strong>Golden Gate Innovations</strong>.</p>
-      <div class="grid3">
-        <article class="card">
-          <p class="status done"><i></i>Delivered</p>
-          <p class="kicker">Computer vision · Utilities</p>
-          <h3>K-Electric meter reading</h3>
-          <p>Reads electricity meters from field photos: finds the display, straightens it and reads the digits several times. Readings that all agree are accepted automatically; the rest go to a person to check.</p>
-          
-          <ul class="tags"><li>YOLO (rotated boxes)</li><li>OCR</li><li>Test-time augmentation</li></ul>
-        </article>
-        <article class="card">
-          <p class="status done"><i></i>Delivered</p>
-          <p class="kicker">Speech recognition · NLP</p>
-          <h3>Urdu-English meeting transcription</h3>
-          <p>Transcribes meetings where people switch between Urdu and English mid-sentence, then writes a summary with action items. The audio never leaves the company&#x27;s own servers.</p>
-          <dl class="metrics" style="--cols:2"><div><dt>Translation WER</dt><dd>~46%<small>from ~62%</small></dd></div><div><dt>Benchmark WER</dt><dd>28.9%<small>human-annotated</small></dd></div></dl>
-          <ul class="tags"><li>faster-whisper large-v3</li><li>Code-switching</li><li>Speaker diarization</li><li>LLM translation</li></ul>
-        </article>
-        <article class="card">
-          <p class="status done"><i></i>Delivered</p>
-          <p class="kicker">NLP · Open-source intelligence</p>
-          <h3>OSINT news monitor</h3>
-          <p>Collects public news, Reddit threads and government press releases. An LLM tags each item by topic and stance, and everything lands in a dashboard for analysts to review.</p>
-          <dl class="metrics" style="--cols:2"><div><dt>Live sources</dt><dd>8+</dd></div><div><dt>Articles classified</dt><dd>500+</dd></div></dl>
-          <ul class="tags"><li>LLM classification</li><li>RSS / Reddit</li><li>SQLite</li><li>Streamlit</li></ul>
-        </article>
+      
+      <div class="slider" aria-roledescription="carousel" aria-label="Internship projects">
+        <div class="viewport"><div class="track">
+          <article class="card slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+            <p class="status done"><i></i>Delivered</p>
+            <p class="kicker">Computer vision · Utilities</p>
+            <h3>K-Electric meter reading</h3>
+            <p>Reads electricity meters from field photos: finds the display, straightens it and reads the digits several times. Readings that all agree are accepted automatically; the rest go to a person to check.</p>
+            
+            <ul class="tags"><li>YOLO (rotated boxes)</li><li>OCR</li><li>Test-time augmentation</li></ul>
+          </article>
+          <article class="card slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+            <p class="status done"><i></i>Delivered</p>
+            <p class="kicker">Speech recognition · NLP</p>
+            <h3>Urdu-English meeting transcription</h3>
+            <p>Transcribes meetings where people switch between Urdu and English mid-sentence, then writes a summary with action items. The audio never leaves the company&#x27;s own servers.</p>
+            <dl class="metrics" style="--cols:2"><div><dt>Translation WER</dt><dd>~46%<small>from ~62%</small></dd></div><div><dt>Benchmark WER</dt><dd>28.9%<small>human-annotated</small></dd></div></dl>
+            <ul class="tags"><li>faster-whisper large-v3</li><li>Code-switching</li><li>Speaker diarization</li><li>LLM translation</li></ul>
+          </article>
+          <article class="card slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+            <p class="status done"><i></i>Delivered</p>
+            <p class="kicker">NLP · Open-source intelligence</p>
+            <h3>OSINT news monitor</h3>
+            <p>Collects public news, Reddit threads and government press releases. An LLM tags each item by topic and stance, and everything lands in a dashboard for analysts to review.</p>
+            <dl class="metrics" style="--cols:2"><div><dt>Live sources</dt><dd>8+</dd></div><div><dt>Articles classified</dt><dd>500+</dd></div></dl>
+            <ul class="tags"><li>LLM classification</li><li>RSS / Reddit</li><li>SQLite</li><li>Streamlit</li></ul>
+          </article>
+        </div></div>
+        <div class="slider-nav">
+          <button type="button" class="arrow prev" aria-label="Previous project">&#8592;</button>
+          <div class="dots"><button type="button" class="dot" aria-label="Show slide 1"></button><button type="button" class="dot" aria-label="Show slide 2"></button><button type="button" class="dot" aria-label="Show slide 3"></button></div>
+          <button type="button" class="arrow next" aria-label="Next project">&#8594;</button>
+        </div>
       </div>
     </div>
   </section>
@@ -272,6 +292,25 @@ document.querySelectorAll('.card[data-href]').forEach(c=>c.addEventListener('cli
   if(ev.target.closest('a')||String(getSelection()).length) return;
   window.open(c.dataset.href,'_blank','noopener');
 }));
+// Internship slideshow: auto-advances every 6 s; pauses on hover/focus or a hidden tab; arrows, dots, swipe, keys.
+document.querySelectorAll('.slider').forEach(sl=>{
+  const track=sl.querySelector('.track'), slides=[...track.children], dots=[...sl.querySelectorAll('.dot')];
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i=0, timer=null, paused=false;
+  function go(n){ i=(n+slides.length)%slides.length; track.style.transform=`translateX(${-100*i}%)`;
+    dots.forEach((d,k)=>d.setAttribute('aria-current',k===i)); slides.forEach((s,k)=>s.setAttribute('aria-hidden',k!==i)); }
+  function start(){ stop(); if(!still) timer=setInterval(()=>{ if(!paused && !document.hidden) go(i+1); },6000); }
+  function stop(){ if(timer) clearInterval(timer); timer=null; }
+  sl.querySelector('.prev').onclick=()=>{go(i-1); start();};
+  sl.querySelector('.next').onclick=()=>{go(i+1); start();};
+  dots.forEach((d,k)=>d.onclick=()=>{go(k); start();});
+  sl.addEventListener('mouseenter',()=>paused=true); sl.addEventListener('mouseleave',()=>paused=false);
+  sl.addEventListener('focusin',()=>paused=true); sl.addEventListener('focusout',()=>paused=false);
+  sl.addEventListener('keydown',ev=>{ if(ev.key==='ArrowLeft'){go(i-1);start();} if(ev.key==='ArrowRight'){go(i+1);start();} });
+  let x0=null; sl.addEventListener('touchstart',ev=>x0=ev.touches[0].clientX,{passive:true});
+  sl.addEventListener('touchend',ev=>{ if(x0===null) return; const dx=ev.changedTouches[0].clientX-x0; if(Math.abs(dx)>40){go(i+(dx<0?1:-1)); start();} x0=null; });
+  go(0); start();
+});
 // Background: a layered neural network; signals travel layer by layer, left to right.
 (function(){
   const cv=document.getElementById('nn'), ctx=cv.getContext('2d');
