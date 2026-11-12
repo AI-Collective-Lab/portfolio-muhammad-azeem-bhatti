@@ -204,9 +204,9 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
             <p class="status done"><i></i>Delivered</p>
             <p class="kicker">Computer vision · Utilities</p>
             <h3>K-Electric meter reading</h3>
-            <p>Reads electricity meters from field photos: finds the display, straightens it and reads the digits several times. Readings that all agree are accepted automatically; the rest go to a person to check.</p>
-            <dl class="metrics" style="--cols:2"><div><dt>Exact readings</dt><dd>94.0%<small>133 held-out photos</small></dd></div><div><dt>OCR engines benchmarked</dt><dd>6<small>fine-tuned</small></dd></div></dl>
-            <ul class="tags"><li>YOLO (rotated boxes)</li><li>CRNN OCR</li><li>Test-time augmentation</li></ul>
+            <p>Reads electricity meters from field photos: finds the display, straightens it and reads the digits with five models that vote. Readings they all agree on are accepted automatically, doubtful ones go to a person to check, and unreadable photos are sent back for a retake.</p>
+            <dl class="metrics" style="--cols:2"><div><dt>Exact readings</dt><dd>98.2%<small>606 held-out crops, five-model vote</small></dd></div><div><dt>Auto-accepted</dt><dd>99.5%<small>correct, on 95.7% of crops</small></dd></div></dl>
+            <ul class="tags"><li>YOLO11n-OBB detector</li><li>ResNet18 + BiLSTM CRNN</li><li>Five-model vote</li><li>Test-time augmentation</li></ul>
           </article>
           <article class="card slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
             <p class="status done"><i></i>Delivered</p>
