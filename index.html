@@ -207,6 +207,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
             <p>Reads electricity meters from field photos: finds the display, straightens it and reads the digits with five models that vote. Readings they all agree on are accepted automatically, doubtful ones go to a person to check, and unreadable photos are sent back for a retake.</p>
             <dl class="metrics" style="--cols:2"><div><dt>Exact readings</dt><dd>98.2%<small>606 held-out crops, five-model vote</small></dd></div><div><dt>Auto-accepted</dt><dd>99.5%<small>correct, on 95.7% of crops</small></dd></div></dl>
             <ul class="tags"><li>YOLO11n-OBB detector</li><li>ResNet18 + BiLSTM CRNN</li><li>Five-model vote</li><li>Test-time augmentation</li></ul>
+            <div class="links"><a href="https://ai-collective-lab.github.io/assets/k-electric-cv-pipeline.pdf" target="_blank" rel="noopener">How it was built (PDF) ↗</a></div>
           </article>
           <article class="card slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
             <p class="status done"><i></i>Delivered</p>
@@ -215,6 +216,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
             <p>Transcribes meetings where people switch between Urdu and English mid-sentence, then writes a summary with action items. The audio never leaves the company&#x27;s own servers.</p>
             <dl class="metrics" style="--cols:2"><div><dt>Translation WER</dt><dd>~46%<small>from ~62%</small></dd></div><div><dt>Benchmark WER</dt><dd>28.9%<small>human-annotated</small></dd></div></dl>
             <ul class="tags"><li>faster-whisper large-v3</li><li>Code-switching</li><li>Speaker diarization</li><li>LLM translation</li></ul>
+            
           </article>
           <article class="card slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
             <p class="status done"><i></i>Delivered</p>
@@ -223,6 +225,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
             <p>Collects public news, Reddit threads and government press releases. An LLM tags each item by topic and stance, and everything lands in a dashboard for analysts to review.</p>
             <dl class="metrics" style="--cols:2"><div><dt>Live sources</dt><dd>8+</dd></div><div><dt>Articles classified</dt><dd>500+</dd></div></dl>
             <ul class="tags"><li>LLM classification</li><li>RSS / Reddit</li><li>SQLite</li><li>Streamlit</li></ul>
+            
           </article>
         </div></div>
         <div class="slider-nav">
