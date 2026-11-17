@@ -18,7 +18,7 @@
 | Project | Role | What it is | Links |
 |---|---|---|---|
 | **LatentGAT** | Author | Brain tumour segmentation with graph attention at the U-Net bottleneck | [Research pages](https://ai-collective-lab.github.io/latentgat-training-dashboard/) · [Source](https://github.com/AI-Collective-Lab/latentgat-training-dashboard) |
-| **GAN-balanced plant disease classification** | Author | Does generating minority-class images fix an imbalanced dataset? | [Source](https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification) · [Dataset on Kaggle](https://www.kaggle.com/datasets/muhammadazeemaif25/plant-disease-imbalanced-vs-gan-balanced) |
+| **GAN-balanced plant disease classification** | Author | Does generating minority-class images fix an imbalanced dataset? | [Source](https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification) · [PlantVillage dataset](https://github.com/spMohanty/PlantVillage-Dataset) |
 | **HIGGS: logistic regression vs neural network** | Author | How much does model capacity matter at 11 million samples? | [Source](https://github.com/AI-Collective-Lab/HIGGS-ML-Classification) · [Report (PDF)](https://github.com/AI-Collective-Lab/HIGGS-ML-Classification/blob/main/paper/REPORT.pdf) |
 
 ## 📄 Research
